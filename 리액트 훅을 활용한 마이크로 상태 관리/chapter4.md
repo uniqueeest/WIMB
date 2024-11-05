@@ -167,3 +167,18 @@ const useStoreSelector = (store, selector) => {
   );
 };
 ```
+
+## useSyncExternalStore
+
+- 외부 store를 구독할 수 있는 훅
+- 대부분의 React 컴포넌트는 props, state, context에서만 데이터를 읽음. 하지만 때로 컴포넌트가 시간이 지남에 따라 변경되는 React 외부의 일부 저장소에서 일부 데이터를 읽어야 하는 경우가 있음
+  =- React 외부에 state를 보관하는 서드파티 상태 관리 라이브러리
+  =- 변경 가능한 값을 노출하는 브라우저 API와 그 변경 사항을 구독하는 이벤트
+
+```tsx
+const snapshot = useSyncExternalStore(
+subscribe, // 외부 저장소의 변화를 구독하는 함수. 이 함수는 리스너 함수를 인자로 받아 상태가 변할 때마다 리스너 호출
+getSnapshot, // 현재 상태의 스냅샷을 반환하는 함수. 컴포넌트가 상태를 필요로 할 때 호출
+getServerSnapshot? // 이 인자는 서버 사이드 렌더링에만 필요
+)
+```
