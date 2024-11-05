@@ -172,8 +172,8 @@ const useStoreSelector = (store, selector) => {
 
 - 외부 store를 구독할 수 있는 훅
 - 대부분의 React 컴포넌트는 props, state, context에서만 데이터를 읽음. 하지만 때로 컴포넌트가 시간이 지남에 따라 변경되는 React 외부의 일부 저장소에서 일부 데이터를 읽어야 하는 경우가 있음
-  =- React 외부에 state를 보관하는 서드파티 상태 관리 라이브러리
-  =- 변경 가능한 값을 노출하는 브라우저 API와 그 변경 사항을 구독하는 이벤트
+  - React 외부에 state를 보관하는 서드파티 상태 관리 라이브러리
+  - 변경 가능한 값을 노출하는 브라우저 API와 그 변경 사항을 구독하는 이벤트
 
 ```tsx
 const snapshot = useSyncExternalStore(
